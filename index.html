@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brasserie Les Tilleuls – Restaurant à Plateau d'Hauteville</title>
+<meta name="description" content="Brasserie Les Tilleuls à Plateau d'Hauteville : ambiance chaleureuse, service rapide et bon rapport qualité-prix. Ouvert 7j/7. Réservez au 04 74 35 30 18.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #2F6F6B;
+    --secondary: #C97B5A;
+    --background: #F7F1E6;
+    --text: #2B2620;
+    --cta: #C97B5A;
+    --font-heading: 'Fraunces', serif;
+    --font-body: 'Karla', sans-serif;
+    --radius: 6px;
+    --max-width: 1200px;
+    --spacing-section: 100px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--background);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text);
+  }
+
+  .container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-heading {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 1.25rem;
+    color: var(--text);
+  }
+
+  .section-text {
+    font-size: 1.05rem;
+    color: #5a4f47;
+    max-width: 640px;
+    line-height: 1.8;
+  }
+
+  /* CTA BUTTON */
+  .cta {
+    display: inline-block;
+    background-color: var(--cta);
+    color: #fff;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    padding: 0.85rem 2rem;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 18px rgba(201,123,90,0.25);
+  }
+  .cta:hover {
+    background-color: #b5673f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(201,123,90,0.35);
+  }
+
+  .cta-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--primary);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius);
+    border: 2px solid var(--primary);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  .cta-outline:hover {
+    background: var(--primary);
+    color: #fff;
+  }
+
+  /* NAVIGATION */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(247,241,230,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(47,111,107,0.12);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled {
+    box-shadow: 0 2px 20px rgba(43,38,32,0.1);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    font-style: italic;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  nav ul li a {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  nav ul li a:hover { color: var(--primary); }
+  nav ul li.nav-cta a {
+    background: var(--cta);
+    color: #fff;
+    padding: 0.55rem 1.2rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: background 0.25s;
+  }
+  nav ul li.nav-cta a:hover { background: #b5673f; color: #fff; }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+  .burger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .burger.active span:nth-child(2) { opacity: 0; }
+  .burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 767px) {
+    .burger { display: flex; }
+    nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(247,241,230,0.98);
+      padding: 1.5rem 1.5rem 2rem;
+      gap: 1.25rem;
+      border-bottom: 2px solid var(--primary);
+      box-shadow: 0 8px 24px rgba(43,38,32,0.1);
+    }
+    nav ul.open { display: flex; }
+    nav ul li { width: 100%; text-align: center; }
+    nav ul li.nav-cta a { display: block; }
+  }
+  @media (min-width: 768px) {
+    nav ul { display: flex !important; flex-direction: row; position: static; background: none; padding: 0; box-shadow: none; border: none; }
+  }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(43,38,32,0.72) 0%, rgba(43,38,32,0.35) 60%, rgba(43,38,32,0.1) 100%);
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 120px 0 80px;
+    max-width: 620px;
+    margin-left: 5%;
+  }
+  .hero-content .section-label { color: #e8c9a8; }
+  .hero-content h1 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    color: #fff;
+    margin-bottom: 1rem;
+    font-style: italic;
+    font-weight: 700;
+  }
+  .hero-content .hero-sub {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9);
+    font-family: var(--font-heading);
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  .hero-content .hero-text {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.82);
+    margin-bottom: 2rem;
+    line-height: 1.75;
+    max-width: 520px;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  @media (min-width: 768px) {
+    .hero-content {
+      margin-left: calc((100% - var(--max-width)) / 2 + 5%);
+      max-width: 580px;
+    }
+  }
+
+  /* ABOUT */
+  #apropos {
+    padding: var(--spacing-section) 0;
+    background: var(--background);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  @media (min-width: 768px) {
+    .about-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+  }
+  .about-image-wrap {
+    position: relative;
+    aspect-ratio: 4/3;
+    border-radius: var(--radius);
+    overflow: visible;
+  }
+  .about-image-wrap img {
+    border-radius: var(--radius);
+    box-shadow: 0 12px 48px rgba(43,38,32,0.15);
+  }
+  /* corner_frame decoration */
+  .corner-frame {
+    position: relative;
+  }
+  .corner-frame::before {
+    content: '';
+    position: absolute;
+    top: -14px;
+    left: -14px;
+    width: 70px;
+    height: 70px;
+    border-top: 3px solid var(--secondary);
+    border-left: 3px solid var(--secondary);
+    border-radius: 2px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .corner-frame::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    right: -14px;
+    width: 70px;
+    height: 70px;
+    border-bottom: 3px solid var(--primary);
+    border-right: 3px solid var(--primary);
+    border-radius: 2px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .about-text-wrap { }
+  .about-text-wrap .section-text { max-width: 100%; }
+  .about-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--primary);
+    font-weight: 600;
+  }
+  .about-detail svg { flex-shrink: 0; }
+
+  /* FEATURED MENU */
+  #carte {
+    padding: var(--spacing-section) 0;
+    background: #f0e9d8;
+  }
+  .menu-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .menu-header .section-text { margin: 0 auto; text-align: center; }
+  .menu-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  @media (min-width: 600px) { .menu-cards { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1024px) { .menu-cards { grid-template-columns: repeat(3, 1fr); } }
+
+  .menu-card {
+    background: var(--background);
+    border-radius: var(--radius);
+    padding: 2rem 1.75rem;
+    box-shadow: 0 4px 24px rgba(43,38,32,0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-top: 3px solid var(--secondary);
+  }
+  .menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(43,38,32,0.13);
+  }
+  .menu-card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .menu-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: var(--primary);
+  }
+  .menu-card p {
+    font-size: 0.95rem;
+    color: #6b5f57;
+    line-height: 1.65;
+  }
+  .menu-cta-wrap { text-align: center; }
+
+  /* REVIEWS */
+  #avis {
+    padding: var(--spacing-section) 0;
+    background: var(--background);
+  }
+  .reviews-header { text-align: center; margin-bottom: 3.5rem; }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media (min-width: 768px) { .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .review-card {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 2.25rem 2rem 2rem;
+    box-shadow: 0 6px 32px rgba(43,38,32,0.08);
+    position: relative;
+  }
+  /* big_quote style */
+  .review-card::before {
+    content: '\201C';
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--secondary);
+    opacity: 0.25;
+    position: absolute;
+    top: 0.5rem;
+    left: 1.25rem;
+    pointer-events: none;
+  }
+  .review-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 1rem;
+  }
+  .star { color: #e8a838; font-size: 1.1rem; }
+  .review-text {
+    font-size: 0.97rem;
+    color: #4a3f38;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  .review-author {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-family: var(--font-body);
+  }
+  .review-date {
+    font-size: 0.8rem;
+    color: #9a8f87;
+    margin-top: 0.2rem;
+  }
+
+  /* GALLERY */
+  #galerie {
+    padding: var(--spacing-section) 0;
+    background: #f0e9d8;
+  }
+  .gallery-header { text-align: center; margin-bottom: 3rem; }
+  /* asymmetric grid */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+  @media (min-width: 600px) {
+    .gallery-grid {
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 280px 280px;
+    }
+    .gallery-item:nth-child(1) {
+      grid-column: 1;
+      grid-row: 1 / 3;
+    }
+    .gallery-item:nth-child(2) { grid-column: 2; grid-row: 1; }
+    .gallery-item:nth-child(3) { grid-column: 2; grid-row: 2; }
+  }
+  .gallery-item {
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 4/3;
+  }
+  @media (min-width: 600px) { .gallery-item { aspect-ratio: unset; } }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .gallery-item:hover img { transform: scale(1.04); }
+  /* corner_frame on gallery items */
+  .gallery-item.corner-frame::before {
+    top: -10px; left: -10px; width: 50px; height: 50px;
+    border-width: 2px;
+  }
+  .gallery-item.corner-frame::after {
+    bottom: -10px; right: -10px; width: 50px; height: 50px;
+    border-width: 2px;
+  }
+
+  /* HOURS & LOCATION */
+  #horaires {
+    padding: var(--spacing-section) 0;
+    background: var(--background);
+  }
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  @media (min-width: 768px) { .hours-grid { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+
+  .hours-table-wrap h2 { margin-bottom: 1.5rem; }
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .hours-table tr {
+    border-bottom: 1px solid rgba(47,111,107,0.12);
+  }
+  .hours-table tr:last-child { border-bottom: none; }
+  .hours-table td {
+    padding: 0.7rem 0.5rem;
+    font-size: 0.97rem;
+  }
+  .hours-table td:first-child {
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: capitalize;
+    width: 45%;
+  }
+  .hours-table td:last-child { color: #5a4f47; }
+
+  .address-block {
+    margin-top: 1.75rem;
+    padding: 1.5rem;
+    background: #f0e9d8;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--secondary);
+  }
+  .address-block p {
+    font-size: 0.97rem;
+    color: #5a4f47;
+    line-height: 1.7;
+  }
+  .address-block a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .address-block a:hover { text-decoration: underline; }
+
+  .map-wrap {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(43,38,32,0.12);
+    height: 380px;
+  }
+  .map-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* CONTACT FORM */
+  #contact {
+    padding: var(--spacing-section) 0;
+    background: #f0e9d8;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  @media (min-width: 768px) { .contact-grid { grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; } }
+
+  .contact-info h2 { margin-bottom: 1rem; }
+  .contact-info .section-text { margin-bottom: 2rem; }
+  .contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+  .contact-detail-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-detail-icon svg { color: #fff; }
+  .contact-detail-text { font-size: 0.97rem; color: #5a4f47; line-height: 1.6; }
+  .contact-detail-text strong { display: block; color: var(--text); font-weight: 600; margin-bottom: 0.1rem; }
+  .contact-detail-text a { color: var(--primary); text-decoration: none; font-weight: 500; }
+  .contact-detail-text a:hover { text-decoration: underline; }
+
+  .contact-form-wrap {
+    background: var(--background);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 36px rgba(43,38,32,0.09);
+  }
+  .form-group { margin-bottom: 1.4rem; }
+  .form-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.45rem;
+    letter-spacing: 0.04em;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1.5px solid rgba(47,111,107,0.25);
+    border-radius: var(--radius);
+    background: #faf7f2;
+    font-family: var(--font-body);
+    font-size: 0.97rem;
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(47,111,107,0.12);
+  }
+  .form-group textarea { resize: vertical; min-height: 130px; }
+  .form-submit { width: 100%; text-align: center; }
+  .form-submit .cta { width: 100%; font-size: 1rem; padding: 1rem; }
+
+  /* TRUST SIGNALS */
+  #confiance {
+    padding: var(--spacing-section) 0;
+    background: var(--primary);
+  }
+  .trust-header { text-align: center; margin-bottom: 3rem; }
+  .trust-header .section-label { color: rgba(255,255,255,0.65); }
+  .trust-header h2 { color: #fff; }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) { .trust-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1024px) { .trust-grid { grid-template-columns: repeat(5, 1fr); } }
+
+  .trust-item {
+    background: rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: background 0.25s;
+  }
+  .trust-item:hover { background: rgba(255,255,255,0.18); }
+  .trust-item-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+  .trust-item p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #1e2e2c;
+    color: rgba(255,255,255,0.75);
+    padding: 3.5rem 0 2rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+  @media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; } }
+
+  .footer-brand .nav-logo { color: #fff; font-size: 1.5rem; display: block; margin-bottom: 1rem; }
+  .footer-brand p { font-size: 0.9rem; line-height: 1.7; }
+
+  .footer-col h4 {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.6rem; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--secondary); }
+  .footer-col p { font-size: 0.92rem; line-height: 1.7; }
+  .footer-col a { color: var(--secondary); text-decoration: none; }
+  .footer-col a:hover { text-decoration: underline; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* FADE-IN ANIMATION */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: var(--secondary);
+    border-radius: 2px;
+    margin: 1rem 0 1.5rem;
+  }
+  .divider-center { margin: 1rem auto 1.5rem; }
+
+/* ── GARDE-FOU NAV (post-traitement deterministe, pas le LLM) ────────────────
+   Le modele produit typiquement `nav ul.open { flex-direction:column }` SANS
+   media query. Sa specificite (0,2,1) bat la regle desktop `nav ul` (0,0,2)
+   quand celle-ci n'a pas !important sur flex-direction : au retour en desktop
+   apres ouverture du burger, le menu reste empile en colonne (menu casse).
+   Cette regle force l'etat desktop quel que soit l'etat de .open. */
+@media (min-width: 768px) {
+  nav ul, nav ul.open, nav.open ul, nav ul[data-open="true"] {
+    flex-direction: row !important;
+    position: static !important;
+    display: flex !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    width: auto !important;
+  }
+  .burger, button.burger, .nav-toggle, #burger, .burger-menu { display: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="main-nav" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Brasserie Les Tilleuls – accueil">Les Tilleuls</a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-menu">
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#carte">Notre carte</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#horaires">Horaires</a></li>
+      <li class="nav-cta"><a href="tel:+33474353018" class="cta" aria-label="Appeler la brasserie">Réserver une table</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" aria-label="Accueil Brasserie Les Tilleuls">
+  <div class="hero-bg">
+    <img src="assets/hero.jpg" alt="Intérieur chaleureux de la Brasserie Les Tilleuls à Plateau d'Hauteville" loading="eager">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="section-label">Brasserie &amp; Restaurant</span>
+    <h1>Brasserie Les Tilleuls</h1>
+    <p class="hero-sub">Votre restaurant convivial à Plateau d'Hauteville</p>
+    <p class="hero-text">Située au 23 Rue de la République, 4 Place des FFI à Plateau d'Hauteville, la Brasserie Les Tilleuls vous accueille dans une ambiance chaleureuse. Venez profiter d'un service rapide et souriant, d'une terrasse agréable et de tarifs raisonnables.</p>
+    <div class="hero-btns">
+      <a href="tel:+33474353018" class="cta" aria-label="Appeler pour réserver une table">Réserver une table</a>
+      <a href="#carte" class="cta-outline" style="color:#fff;border-color:rgba(255,255,255,0.7);" aria-label="Voir notre carte">Voir la carte</a>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section id="apropos" aria-label="À propos de la Brasserie Les Tilleuls">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap corner-frame fade-in">
+        <img src="assets/gallery-1.jpg" alt="Salle conviviale de la Brasserie Les Tilleuls" loading="lazy">
+      </div>
+      <div class="about-text-wrap fade-in">
+        <span class="section-label">Notre histoire</span>
+        <h2 class="section-heading">À propos de la Brasserie Les Tilleuls</h2>
+        <div class="divider"></div>
+        <p class="section-text">La Brasserie Les Tilleuls est un restaurant situé au cœur de Plateau d'Hauteville, dans l'Ain. Notre établissement vous propose une carte avec un bon rapport qualité-prix, dans une ambiance conviviale. Que ce soit pour un café en terrasse, un déjeuner rapide ou une soirée entre amis, notre équipe vous réserve un accueil chaleureux et un service toujours avec le sourire.</p>
+        <div class="about-detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          23 Rue de la République, 4 Place des FFI, 01110 Plateau d'Hauteville
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="tel:+33474353018" class="cta" aria-label="Appeler la brasserie">Appelez-nous au 04 74 35 30 18</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTRE CARTE -->
+<section id="carte" aria-label="Notre carte">
+  <div class="container">
+    <div class="menu-header fade-in">
+      <span class="section-label">Ce que nous proposons</span>
+      <h2 class="section-heading">Notre carte</h2>
+      <div class="divider divider-center"></div>
+      <p class="section-text">Découvrez notre carte qui propose un bon rapport qualité-prix. Nos tarifs sont plus que raisonnables, en particulier sur le café. Pour connaître nos plats du jour et suggestions, n'hésitez pas à nous appeler ou à passer nous voir directement.</p>
+    </div>
+    <div class="menu-cards">
+      <div class="menu-card fade-in">
+        <div class="menu-card-icon" aria-hidden="true">🍽️</div>
+        <h3>Plats du jour</h3>
+        <p>Chaque jour, notre cuisine prépare des plats du jour mijotés avec soin, à base de produits frais et de saison du Plateau d'Hauteville.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <div class="menu-card-icon" aria-hidden="true">☕</div>
+        <h3>Café &amp; boissons</h3>
+        <p>Profitez de notre café à des tarifs particulièrement raisonnables, servi en salle ou en terrasse dans une ambiance détendue et conviviale.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <div class="menu-card-icon" aria-hidden="true">🌿</div>
+        <h3>Cuisine de brasserie</h3>
+        <p>Notre carte de brasserie traditionnelle vous propose des classiques généreux et savoureux, préparés maison avec des produits locaux du Haut-Bugey.</p>
+      </div>
+    </div>
+    <div class="menu-cta-wrap fade-in">
+      <a href="tel:+33474353018" class="cta" aria-label="Appeler pour connaître les plats du jour">Appelez-nous au 04 74 35 30 18</a>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS CLIENTS -->
+<section id="avis" aria-label="Avis de nos clients">
+  <div class="container">
+    <div class="reviews-header fade-in">
+      <span class="section-label">Témoignages</span>
+      <h2 class="section-heading">Ce que disent nos clients</h2>
+      <div class="divider divider-center"></div>
+    </div>
+    <div class="reviews-grid">
+
+      <article class="review-card fade-in" aria-label="Avis de Maurane Bryl">
+        <div class="review-stars" aria-label="5 étoiles sur 5">
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+        </div>
+        <p class="review-text">« Excellente ambiance ! L'accueil est chaleureux, le service rapide et toujours avec le sourire. La carte propose un bon rapport qualité-prix. Un endroit parfait pour passer une soirée conviviale entre amis. Je recommande vivement ! »</p>
+        <p class="review-author">Maurane Bryl</p>
+        <p class="review-date">il y a 10&nbsp;mois</p>
+      </article>
+
+      <article class="review-card fade-in" aria-label="Avis de Wilfrid Millet">
+        <div class="review-stars" aria-label="5 étoiles sur 5">
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+        </div>
+        <p class="review-text">« Terrasse agréable, service sympathique, et tarifs plus que raisonnables, en particulier sur le café. »</p>
+        <p class="review-author">Wilfrid Millet</p>
+        <p class="review-date">il y a un mois</p>
+      </article>
+
+      <article class="review-card fade-in" aria-label="Avis de Mika Gz">
+        <div class="review-stars" aria-label="5 étoiles sur 5">
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+        </div>
+        <p class="review-text">« Très bonne expérience, patron très sympa. »</p>
+        <p class="review-author">Mika Gz</p>
+        <p class="review-date">il y a 10&nbsp;mois</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie" aria-label="Galerie photos de la Brasserie Les Tilleuls">
+  <div class="container">
+    <div class="gallery-header fade-in">
+      <span class="section-label">En images</span>
+      <h2 class="section-heading">Découvrez notre brasserie</h2>
+      <div class="divider divider-center"></div>
+      <p class="section-text" style="margin:0 auto;">Découvrez l'ambiance de la Brasserie Les Tilleuls à travers quelques photos. Notre terrasse agréable et notre intérieur chaleureux vous attendent.</p>
+    </div>
+    <div class="gallery-grid" style="margin-top:2.5rem;">
+      <div class="gallery-item corner-frame fade-in">
+        <img src="assets/hero.jpg" alt="Façade et terrasse de la Brasserie Les Tilleuls à Plateau d'Hauteville" loading="lazy">
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="assets/gallery-1.jpg" alt="Salle intérieure chaleureuse de la Brasserie Les Tilleuls" loading="lazy">
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="assets/gallery-2.jpg" alt="Ambiance conviviale et plats de la Brasserie Les Tilleuls" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HORAIRES & ADRESSE -->
+<section id="horaires" aria-label="Horaires et adresse de la Brasserie Les Tilleuls">
+  <div class="container">
+    <div class="hours-grid">
+      <div class="hours-table-wrap fade-in">
+        <span class="section-label">Quand nous trouver</span>
+        <h2 class="section-heading">Horaires et adresse</h2>
+        <div class="divider"></div>
+        <table class="hours-table" aria-label="Horaires d'ouverture">
+          <tbody>
+            <tr><td>Lundi</td><td>07:30 – 20:00</td></tr>
+            <tr><td>Mardi</td><td>07:30 – 20:00</td></tr>
+            <tr><td>Mercredi</td><td>07:30 – 20:00</td></tr>
+            <tr><td>Jeudi</td><td>07:30 – 20:00</td></tr>
+            <tr><td>Vendredi</td><td>07:30 – 20:00</td></tr>
+            <tr><td>Samedi</td><td>07:00 – 20:00</td></tr>
+            <tr><td>Dimanche</td><td>07:00 – 12:30</td></tr>
+          </tbody>
+        </table>
+        <div class="address-block" style="margin-top:2rem;">
+          <p>
+            <strong style="color:var(--primary);display:block;margin-bottom:0.4rem;">Notre adresse</strong>
+            23 Rue de la République, 4 Place des FFI<br>
+            01110 Plateau d'Hauteville, France<br><br>
+            <strong style="color:var(--primary);">Téléphone :</strong> <a href="tel:+33474353018">04 74 35 30 18</a><br>
+            <strong style="color:var(--primary);">Email :</strong> <a href="mailto:lestilleuls01110@gmail.com">lestilleuls01110@gmail.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="map-wrap fade-in" aria-label="Carte Google Maps de la Brasserie Les Tilleuls">
+        <iframe
+          src="https://www.google.com/maps?q=23+Rue+de+la+R%C3%A9publique,+01110+Plateau+d%27Hauteville,+France&output=embed"
+          title="Localisation de la Brasserie Les Tilleuls sur Google Maps"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULAIRE DE CONTACT -->
+<section id="contact" aria-label="Formulaire de contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <span class="section-label">Nous joindre</span>
+        <h2 class="section-heading">Contactez-nous</h2>
+        <div class="divider"></div>
+        <p class="section-text">Pour toute réservation ou demande d'information, n'hésitez pas à nous contacter par téléphone ou par email. Nous vous répondrons dans les plus brefs délais.</p>
+        <div style="margin-top:2rem;">
+          <div class="contact-detail">
+            <div class="contact-detail-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <strong>Téléphone</strong>
+              <a href="tel:+33474353018">04 74 35 30 18</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <strong>Email</strong>
+              <a href="mailto:lestilleuls01110@gmail.com">lestilleuls01110@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <strong>Adresse</strong>
+              23 Rue de la République, 4 Place des FFI, 01110 Plateau d'Hauteville
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap fade-in">
+        <form action="https://checkout.kamkod.com/contact" method="POST" aria-label="Formulaire de contact Brasserie Les Tilleuls">
+          <input type="hidden" name="lead_id" value="ChIJ7XvfUfNdi0cRAnHflQdggCY">
+          <div class="form-group">
+            <label for="name">Votre nom</label>
+            <input type="text" id="name" name="name" placeholder="Prénom et nom" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Votre adresse email</label>
+            <input type="email" id="email" name="email" placeholder="exemple@email.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="message">Votre message</label>
+            <textarea id="message" name="message" placeholder="Votre demande de réservation ou question..." required></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="cta" aria-label="Envoyer votre message">Envoyer le message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST SIGNALS -->
+<section id="confiance" aria-label="Pourquoi choisir la Brasserie Les Tilleuls">
+  <div class="container">
+    <div class="trust-header fade-in">
+      <span class="section-label">Nos engagements</span>
+      <h2 class="section-heading" style="color:#fff;">Pourquoi nous choisir ?</h2>
+      <div class="divider divider-center" style="background:var(--secondary);"></div>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item fade-in">
+        <div class="trust-item-icon" aria-hidden="true">😊</div>
+        <p>Accueil chaleureux et service avec le sourire</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-item-icon" aria-hidden="true">💰</div>
+        <p>Bon rapport qualité-prix</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-item-icon" aria-hidden="true">☀️</div>
+        <p>Terrasse agréable</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-item-icon" aria-hidden="true">⚡</div>
+        <p>Service rapide</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-item-icon" aria-hidden="true">📅</div>
+        <p>Ouvert 7j/7</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer aria-label="Pied de page Brasserie Les Tilleuls">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo" style="font-family:var(--font-heading);font-style:italic;">Les Tilleuls</span>
+        <p>Brasserie Les Tilleuls – 23 Rue de la République, 4 Place des FFI, 01110 Plateau d'Hauteville, France. Téléphone : 04 74 35 30 18. Email : lestilleuls01110@gmail.com.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#carte">Notre carte</a></li>
+          <li><a href="#avis">Avis clients</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#horaires">Horaires</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:+33474353018">04 74 35 30 18</a><br>
+          <a href="mailto:lestilleuls01110@gmail.com">lestilleuls01110@gmail.com</a><br><br>
+          23 Rue de la République<br>
+          4 Place des FFI<br>
+          01110 Plateau d'Hauteville
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Brasserie Les Tilleuls. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // BURGER MENU
+  const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('nav-menu');
+
+  burger.addEventListener('click', function() {
+    const isOpen = navMenu.classList.toggle('open');
+    burger.classList.toggle('active', isOpen);
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Close menu on link click
+  navMenu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('open');
+      burger.classList.remove('active');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // NAV SCROLL
+  const mainNav = document.getElementById('main-nav');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 60) {
+      mainNav.classList.add('scrolled');
+    } else {
+      mainNav.classList.remove('scrolled');
+    }
+  });
+
+  // FADE-IN INTERSECTION OBSERVER
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  fadeEls.forEach(function(el) { observer.observe(el); });
+</script>
+<!-- KAMKOD:DEMO_START -->
+<script>
+(function(){
+  var URL = 'https://checkout.kamkod.com/d/ChIJ7XvfUfNdi0cRAnHflQdggCY';
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('a, button, [role="button"]');
+    if(!el || el.closest('form')) return;               /* formulaire -> endpoint contact */
+    if(el.classList.contains('cta')) { e.preventDefault(); window.location.href = URL; return; }
+    if(el.closest('header nav, nav')) return;           /* navigation interne de la démo */
+    var a = e.target.closest('a');
+    if(!a) return;                                      /* bouton seul hors nav: on laisse */
+    var href = a.getAttribute('href') || '';
+    if(href.charAt(0) === '#') return;                  /* ancres de section */
+    if(/^https?:|^\/\//i.test(href)) return;
+    e.preventDefault(); window.location.href = URL;     /* tel:, mailto:, javascript:… */
+  }, true);
+})();
+</script>
+<div id="kamkod-demo-banner" data-pid="ChIJ7XvfUfNdi0cRAnHflQdggCY" data-echeance="1790115480305"
+     style="position:fixed;bottom:0;left:0;right:0;background:#111;color:#fff;z-index:9999;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;box-shadow:0 -2px 14px rgba(0,0,0,.4);">
+  <div style="max-width:920px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;">
+    <span style="flex:1;min-width:200px;font-size:13px;opacity:.8;">Aperçu de votre futur site</span>
+    <span id="kk-offre" style="font-size:14px;font-variant-numeric:tabular-nums;">Prix de lancement : <b>49,00 €</b> — encore 47h 59min 59s</span>
+    <a href="https://checkout.kamkod.com/d/ChIJ7XvfUfNdi0cRAnHflQdggCY" style="background:#EA580C;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;">Activer mon site</a>
+  </div>
+</div>
+<script>
+/* COMPTE À REBOURS DE LA BANNIÈRE (demande Alex 11/09) : le prospect passe le plus
+   de temps SUR SON SITE — l'urgence doit être ici, pas seulement sur la page de
+   vente après un clic de plus. Même mécanique que la page : fenêtre 48 h, prix de
+   lancement, et le prix plein annoncé une fois la fenêtre passée.
+   L'échéance est EMBARQUÉE à l'injection (aucune dépendance réseau) puis
+   resynchronisée depuis /api/offre toutes les 2 min (une réinitialisation de
+   fenêtre doit se propager à un site déjà déployé). */
+(function(){
+  var b = document.getElementById('kamkod-demo-banner');
+  if(!b) return;
+  var ach = parseInt(b.getAttribute('data-echeance') || '0', 10);
+  var pid = b.getAttribute('data-pid');
+  var el  = document.getElementById('kk-offre');
+  if(!el) return;
+  var T_LAUNCH = "Prix de lancement : <b>%PRIX%</b> — encore %TEMPS%";
+  var T_OVER   = "Le déploiement est passé à <b>%PRIX%</b>";
+  var PRIX_L   = "49,00 €";
+  var PRIX_O   = "98,00 €";
+  function deux(n){ return (n < 10 ? '0' : '') + n; }
+  function hms(s){
+    var h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60;
+    return h + 'h ' + deux(m) + 'min ' + deux(x) + 's';
+  }
+  function rendu(){
+    var s = ach ? Math.floor((ach - Date.now()) / 1000) : 0;
+    if(s > 0){
+      el.innerHTML = T_LAUNCH.replace('%TEMPS%', hms(s)).replace('%PRIX%', PRIX_L);
+    } else {
+      el.innerHTML = T_OVER.replace('%PRIX%', PRIX_O);
+    }
+  }
+  rendu();
+  setInterval(rendu, 1000);
+  function sync(){
+    try{
+      fetch('https://checkout.kamkod.com/api/offre/' + pid, {cache:'no-store'})
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          if(d && d.echeance_ms){ ach = d.echeance_ms; }
+          if(d && d.prix_lancement){ PRIX_L = d.prix_lancement; }
+          if(d && d.prix_apres){ PRIX_O = d.prix_apres; }
+          rendu();
+        })
+        .catch(function(){});
+    }catch(e){}
+  }
+  setTimeout(sync, 5000);
+  setInterval(sync, 120000);
+})();
+</script>
+<script>
+/* KAMKOD-MESURE v1 — page="site" | mesure agrégée : aucun cookie, aucun identifiant. */
+(function(){
+  try{
+    var PID="ChIJ7XvfUfNdi0cRAnHflQdggCY", PAGE="site";
+    var URL="https://checkout.kamkod.com/api/comportement/"+PID;
+    var vis=0, lastIn=Date.now(), scrollMax=0, clics=0, cta=0, premier=1, vues={};
+    var mobile=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent||'');
+    function cache(){ return document.visibilityState==='hidden'; }
+    function temps(){ var n=Date.now(); if(!cache() && lastIn){ vis+=n-lastIn; } lastIn=n; }
+    function majScroll(){
+      var h=Math.max(1,(document.documentElement.scrollHeight||0)-window.innerHeight);
+      var p=Math.round(Math.min(100,((window.pageYOffset||window.scrollY||0)/h)*100));
+      if(p>scrollMax){ scrollMax=p; }
+    }
+    function majSections(){
+      var hs=document.querySelectorAll('h1,h2,h3');
+      for(var i=0;i<hs.length && i<40;i++){
+        var r=hs[i].getBoundingClientRect();
+        if(r.top<window.innerHeight && r.bottom>0){
+          var t=(hs[i].textContent||'').replace(/\s+/g,' ').trim().slice(0,60);
+          if(t){ vues[t]=(vues[t]||0)+1; }
+        }
+      }
+    }
+    function estCta(el){ var a=null,n=el;while(n&&n.tagName!=='A'){n=n.parentNode;}
+      a=n;if(!a||!a.getAttribute)return false;
+      var h=a.getAttribute('href')||'';
+      return h.indexOf('/d/')>-1||h.indexOf('checkout.kamkod.com')>-1; }
+    function envoi(force){
+      try{
+        temps();
+        var secs=Object.keys(vues);
+        if(!force && !secs.length && !vis && !clics && !scrollMax){ return; }
+        var corps=JSON.stringify({v:1, page:PAGE, debut:premier?1:0, temps_ms:Math.round(vis),
+          scroll_max:scrollMax, clics:clics, cta_clics:cta, mobile:mobile, sections:secs});
+        var ok=false;
+        try{
+          if(navigator.sendBeacon){ ok=navigator.sendBeacon(URL, corps); }
+          if(!ok){
+            var x=new XMLHttpRequest();
+            x.open('POST',URL,true);
+            x.setRequestHeader('Content-Type','text/plain;charset=UTF-8');
+            x.send(corps); ok=true;
+          }
+        }catch(e){}
+        if(ok){ premier=0; vis=0; clics=0; cta=0; vues={}; }
+      }catch(e){}
+    }
+    window.addEventListener('scroll',function(){try{majScroll();majSections();}catch(e){}},{passive:true});
+    document.addEventListener('click',function(ev){
+      try{ clics++; if(estCta(ev.target)){ cta++; } }catch(e){}
+    },true);
+    document.addEventListener('visibilitychange',function(){
+      try{ if(cache()){ envoi(false); } else { lastIn=Date.now(); } }catch(e){}
+    });
+    window.addEventListener('pagehide',function(){try{envoi(true);}catch(e){}});
+    setTimeout(function(){try{majScroll();majSections();envoi(false);}catch(e){}},3000);
+    setInterval(function(){try{majSections();envoi(false);}catch(e){}},30000);
+  }catch(e){}
+})();
+</script>
+<!-- KAMKOD:DEMO_END -->
+</body>
+</html>
